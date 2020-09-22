@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "net.pugsworth.manythings.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    
+  ],
+  "client": [
+    "client.EditSignMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

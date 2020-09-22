@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "many-things",
+  "version": "${version}",
+  "name": "Many Things",
+  "description": "Many things are happening.",
+  "authors": [
+    "Pugsworth"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+  "license": "MIT",
+  "icon": "assets/manythings/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.pugsworth.manythings.ManyThingsMod"
+    ],
+    "client": [
+      "net.pugsworth.manythings.ManyThingsClientMod"
+    ],
+    "modmenu": [
+      "net.pugsworth.manythings.config.ManyThingsConfigMenu"
+    ]
+  },
+  "mixins": [
+    "manythings.mixins.json"
+  ],
+  "custom": {
+    "modmenu:api": false,
+    "modmenu:clientsideOnly": false
+  },
+  "depends": {
+    "fabricloader": ">=0.4.0",
+    "fabric": "*"
+  },
+  "suggests": {
+    "flamingo": "*"
+  }
+}

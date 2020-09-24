@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "arrow_exploding",
+    "pattern": [
+        " #",
+        "/ "
+    ],
+    "key": {
+        "#": {
+            "item": "many-things:dynamite_stick"
+        },
+        "/": {
+            "item": "minecraft:arrow"
+        }
+    },
+    "result": {
+        "item": "many-things:arrow_exploding",
+        "count": 1
+    }
+}

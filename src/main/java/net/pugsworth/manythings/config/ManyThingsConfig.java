@@ -2,10 +2,8 @@ package net.pugsworth.manythings.config;
 
 import me.sargunvohra.mcmods.autoconfig1u.ConfigData;
 import me.sargunvohra.mcmods.autoconfig1u.annotation.Config;
-import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
 import me.sargunvohra.mcmods.autoconfig1u.shadowed.blue.endless.jankson.Comment;
-import net.minecraft.item.Item;
-import net.minecraft.item.Items;
+
 import net.pugsworth.manythings.ManyThingsMod;
 
 @Config(name=ManyThingsMod.MODID)

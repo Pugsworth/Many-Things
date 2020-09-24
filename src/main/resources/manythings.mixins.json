@@ -3,10 +3,12 @@
   "package": "net.pugsworth.manythings.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    
+    "SnowBlockMixin",
+    "EntityMixin"
   ],
   "client": [
-    "client.EditSignMixin"
+    "client.EditSignMixin",
+    "client.ClientPlayNetworkHandlerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

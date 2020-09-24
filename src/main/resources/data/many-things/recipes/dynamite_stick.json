@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "group": "dynamite_stick",
+    "ingredients": [
+        {
+            "item": "minecraft:tnt"
+        }
+    ],
+    "result": {
+        "item": "many-things:dynamite_stick",
+        "count": 4
+    }
+}

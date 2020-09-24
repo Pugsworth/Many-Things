@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "arrow_exploding",
+    "pattern": [
+        "#",
+        "/",
+        "F"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:tnt"
+        },
+        "/": {
+            "item": "minecraft:stick"
+        },
+        "F": {
+            "item": "minecraft:feather"
+        }
+    },
+    "result": {
+        "item": "many-things:arrow_exploding",
+        "count": 4
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "tnt",
+    "pattern": [
+        "##",
+        "##"
+    ],
+    "key": {
+        "#": {
+            "item": "many-things:dynamite_stick"
+        }
+    },
+    "result": {
+        "item": "minecraft:tnt",
+        "count": 1
+    }
+}

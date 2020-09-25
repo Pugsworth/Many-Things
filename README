@@ -1,10 +1,11 @@
 
-* Additions
+##Additions
 - Tnt infused arrows
   - Explodes on contact with a solid surface
 - Dynamite stick
   - Thrown like a snowball
   - Defaults to exploding 80 ticks after thrown (like normal tnt)
 
-* Changes
+##Changes
+- Signs are editable with an ink sac in hand (doesn't consume).
 - Fall damage reduction when landing on snow. The more layers, the better reduction.

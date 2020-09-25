@@ -1,1 +1,10 @@
 
+* Additions
+- Tnt infused arrows
+  - Explodes on contact with a solid surface
+- Dynamite stick
+  - Thrown like a snowball
+  - Defaults to exploding 80 ticks after thrown (like normal tnt)
+
+* Changes
+- Fall damage reduction when landing on snow. The more layers, the better reduction.

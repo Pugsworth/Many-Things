@@ -16,6 +16,7 @@ import net.pugsworth.manythings.entity.ModEntities;
 import net.pugsworth.manythings.item.ModItems;
 
 public class ThrownDynamiteStickEntity extends ThrownItemEntity {
+    private int fuse;
 
     public ThrownDynamiteStickEntity(EntityType<? extends ThrownItemEntity> entityType, World world) {
         super(entityType, world);
@@ -23,6 +24,7 @@ public class ThrownDynamiteStickEntity extends ThrownItemEntity {
 
     public ThrownDynamiteStickEntity(World world, PlayerEntity playerEntity) {
         super(ModEntities.THROWN_DYNAMITE_STICK_ENTITY, playerEntity, world);
+        this.setFuse(80);
     }
 
 	@Override
@@ -36,15 +38,29 @@ public class ThrownDynamiteStickEntity extends ThrownItemEntity {
     }
 
     @Override
-    protected void onCollision(HitResult hitResult) {
-        Vec3d pos = hitResult.getPos();
-
-        this.world.createExplosion(this, DamageSource.explosion((LivingEntity) this.getOwner()), pos.getX(), pos.getY(), pos.getZ(), 8.0f, false, DestructionType.BREAK);
-        this.remove();
+    protected void onCollision(HitResult var1) {
+        this.setVelocity(Vec3d.ZERO);
     }
 
     @Override
-    public Packet<?> createSpawnPacket() {
-        return super.createSpawnPacket();
+    public void tick() {
+        if (fuse-- <= 0) {
+            explode();
+        }
+        super.tick();
+    }
+
+    public void explode()
+    {
+        this.world.createExplosion(this, DamageSource.explosion((LivingEntity) this.getOwner()), this.x, this.y, this.z, 8.0f, false, DestructionType.BREAK);
+        this.remove();
+    }
+
+    public void setFuse(int ticksTilBoom) {
+        fuse = ticksTilBoom;
+    }
+
+    public int getFuse() {
+        return fuse;
     }
 }

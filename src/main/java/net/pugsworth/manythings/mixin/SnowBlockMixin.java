@@ -7,6 +7,7 @@ import net.minecraft.block.SnowBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.pugsworth.manythings.ManyThingsMod;
 
 @Mixin(SnowBlock.class)
 public class SnowBlockMixin extends Block {
@@ -15,8 +16,13 @@ public class SnowBlockMixin extends Block {
     }
 
     @Override
-    public void onLandedUpon(World world_1, BlockPos blockPos_1, Entity entity_1, float float_1)
+    public void onLandedUpon(World world, BlockPos blockPos, Entity entity, float fallDistance)
     {
-        entity_1.handleFallDamage(float_1, 0.5F);
+        if (ManyThingsMod.CONFIG.isAllowed(ManyThingsMod.CONFIG.enableFallDamageTweaks)) {
+            entity.handleFallDamage(fallDistance, 0.5F);
+        }
+        else {
+            super.onLandedUpon(world, blockPos, entity, fallDistance);
+        }
     }
 }

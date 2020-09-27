@@ -18,6 +18,10 @@ public class ManyThingsClientMod implements ClientModInitializer
     @Override
     public void onInitializeClient()
     {
+        if (!ManyThingsMod.CONFIG.enable) {
+            return;
+        }
+
         EntityRendererRegistry.INSTANCE.register(ArrowExplodingEntity.class, (dispatcher, context) -> new ArrowEntityRenderer(dispatcher));
         EntityRendererRegistry.INSTANCE.register(ThrownDynamiteStickEntity.class, (dispatcher, context) -> new FlyingItemEntityRenderer<ThrownDynamiteStickEntity>(dispatcher, context.getItemRenderer(), 1.0f));
 

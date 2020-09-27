@@ -1,5 +1,12 @@
 {
     "many-things": "Many Things",
     "item.many-things.arrow_exploding": "Exploding Arrow",
-    "item.many-things.dynamite_stick": "Dynamite Stick"
+    "item.many-things.dynamite_stick": "Dynamite Stick",
+
+    "text.autoconfig.many-things.option.enable": "Enable",
+    "text.autoconfig.many-things.option.enableExplodingArrow": "Enable Exploding Arrows",
+    "text.autoconfig.many-things.option.enableFallDamageTweaks": "Enable Fall Damage Tweaks",
+    "text.autoconfig.many-things.option.enableEditSigns": "Enable editing signs after placement.",
+    "text.autoconfig.many-things.option.editSignItemId": "Item namespaced id to be held to edit signs.",
+    "text.autoconfig.many-things.option.editSignRequireSneak": "Require sneaking to edit signs."
 }

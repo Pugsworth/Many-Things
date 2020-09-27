@@ -13,8 +13,11 @@ public class ModItems
 
     public static void RegisterItems()
     {
-        registerItem("arrow_exploding", ARROW_EXPLODING);
-        registerItem("dynamite_stick", DYNAMITE_STICK);
+        if (ManyThingsMod.CONFIG.isAllowed(ManyThingsMod.CONFIG.enableExplodingArrow))
+        {
+            registerItem("arrow_exploding", ARROW_EXPLODING);
+            registerItem("dynamite_stick", DYNAMITE_STICK);
+        }
     }
 
     public static void registerItem(String id, Item item)

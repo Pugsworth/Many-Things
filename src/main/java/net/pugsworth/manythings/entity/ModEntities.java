@@ -17,8 +17,11 @@ public class ModEntities {
 
     public static void RegisterEntities()
     {
-        ARROW_EXPLODING_ENTITY = registerEntity("arrow_exploding_entity", FabricEntityTypeBuilder.<ArrowExplodingEntity>create(EntityCategory.MISC, ArrowExplodingEntity::new).size(EntityDimensions.fixed(0.5f, 0.5f)).build());
-        THROWN_DYNAMITE_STICK_ENTITY = registerEntity("thrown_dynamite_stick_entity", FabricEntityTypeBuilder.<ThrownDynamiteStickEntity>create(EntityCategory.MISC, ThrownDynamiteStickEntity::new).size(EntityDimensions.fixed(0.25f, 0.25f)).build());
+        if (ManyThingsMod.CONFIG.isAllowed(ManyThingsMod.CONFIG.enableExplodingArrow))
+        {
+            ARROW_EXPLODING_ENTITY = registerEntity("arrow_exploding_entity", FabricEntityTypeBuilder.<ArrowExplodingEntity>create(EntityCategory.MISC, ArrowExplodingEntity::new).size(EntityDimensions.fixed(0.5f, 0.5f)).build());
+            THROWN_DYNAMITE_STICK_ENTITY = registerEntity("thrown_dynamite_stick_entity", FabricEntityTypeBuilder.<ThrownDynamiteStickEntity>create(EntityCategory.MISC, ThrownDynamiteStickEntity::new).size(EntityDimensions.fixed(0.25f, 0.25f)).build());
+        }
     }
 
     public static <T extends Entity> EntityType<T> registerEntity(String id, EntityType<T> entityType)

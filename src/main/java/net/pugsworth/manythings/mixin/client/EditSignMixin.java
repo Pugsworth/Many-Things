@@ -22,15 +22,23 @@ public class EditSignMixin
     @Inject(method = "onActivate", at = @At("HEAD"))
     public void onActivate(PlayerEntity player, CallbackInfoReturnable<Boolean> callback)
     {
-        ItemStack handItem = player.getStackInHand(player.getActiveHand());
-        Identifier itemid = Registry.ITEM.getId(handItem.getItem());
-        Identifier configitemid = new Identifier(ManyThingsMod.CONFIG.editSignItemId);
-
-        if (player.abilities.allowModifyWorld && itemid.equals(configitemid))
+        if (ManyThingsMod.CONFIG.isAllowed(ManyThingsMod.CONFIG.enableEditSigns))
         {
-            editable = true;
-            SignBlockEntity sign = (SignBlockEntity) (Object) this;
-            player.openEditSignScreen(sign);
+            ItemStack handItem = player.getStackInHand(player.getActiveHand());
+            Identifier itemid = Registry.ITEM.getId(handItem.getItem());
+            Identifier configitemid = new Identifier(ManyThingsMod.CONFIG.editSignItemId);
+
+            boolean useEmptyHand = ManyThingsMod.CONFIG.editSignItemId.equals("") && handItem.isEmpty();
+            boolean sneakConfigCheck = ManyThingsMod.CONFIG.isAllowed(ManyThingsMod.CONFIG.editSignRequireSneak);
+            boolean handCheck = ((sneakConfigCheck || useEmptyHand) || itemid.equals(configitemid));
+            boolean sneakCheck = (sneakConfigCheck && player.isSneaking()) || (!sneakConfigCheck && !player.isSneaking()) ;
+
+            if (player.abilities.allowModifyWorld && handCheck && sneakCheck)
+            {
+                editable = true;
+                SignBlockEntity sign = (SignBlockEntity) (Object) this;
+                player.openEditSignScreen(sign);
+            }
         }
     }
 }

@@ -8,5 +8,7 @@
     "text.autoconfig.many-things.option.enableFallDamageTweaks": "Enable Fall Damage Tweaks",
     "text.autoconfig.many-things.option.enableEditSigns": "Enable editing signs after placement.",
     "text.autoconfig.many-things.option.editSignItemId": "Item namespaced id to be held to edit signs.",
-    "text.autoconfig.many-things.option.editSignRequireSneak": "Require sneaking to edit signs."
+    "text.autoconfig.many-things.option.editSignRequireSneak": "Require sneaking to edit signs.",
+    "text.autoconfig.many-things.option.enableMagnet": "Enable Magnet",
+    "text.autoconfig.many-things.option.magnetRange": "Magnet Range"
 }

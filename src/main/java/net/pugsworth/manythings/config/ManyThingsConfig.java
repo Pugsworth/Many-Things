@@ -24,6 +24,11 @@ public class ManyThingsConfig implements ConfigData
     @Comment("Require crouch to edit signs. Due to the nature of crouching with items, this option only works with an empty hand.")
     public boolean editSignRequireSneak = false;
 
+    @Comment("Enable item magnet.")
+    public boolean enableMagnet = true;
+    @Comment("Range of influence on items")
+    public int magnetRange = 16;
+
     /**
      * Helper method to check a boolean value with 'enable'
      * If enable is false, always return false, otherwise, return value

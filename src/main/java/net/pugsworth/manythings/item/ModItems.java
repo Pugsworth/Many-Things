@@ -10,6 +10,7 @@ public class ModItems
 {
     public static Item ARROW_EXPLODING = new ArrowExplodingItem(new Item.Settings().group(ItemGroup.COMBAT).maxCount(16));
     public static Item DYNAMITE_STICK = new DynamiteStickItem(new Item.Settings().group(ItemGroup.MISC).maxCount(16));
+    public static Item MAGNET = new MagnetItem(new Item.Settings().group(ItemGroup.MISC).maxCount(1));
 
     public static void RegisterItems()
     {
@@ -17,6 +18,11 @@ public class ModItems
         {
             registerItem("arrow_exploding", ARROW_EXPLODING);
             registerItem("dynamite_stick", DYNAMITE_STICK);
+        }
+
+        if (ManyThingsMod.CONFIG.isAllowed(ManyThingsMod.CONFIG.enableMagnet))
+        {
+            registerItem("magnet", MAGNET);
         }
     }
 

@@ -1,7 +1,5 @@
 package net.pugsworth.manythings.mixin;
 
-import javax.security.auth.callback.Callback;
-
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -15,7 +13,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
-import net.pugsworth.manythings.ManyThingsMod;
 
 @Mixin(BoneMealItem.class)
 public class BoneMealItemMixin {
@@ -34,7 +31,6 @@ public class BoneMealItemMixin {
             }
 
             itemStack.decrement(1);
-            
             
             return true;
         }

@@ -1,7 +1,5 @@
 package net.pugsworth.manythings.item;
 
-import net.fabricmc.fabric.api.tag.FabricItemTags;
-import net.fabricmc.fabric.api.tag.TagRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;

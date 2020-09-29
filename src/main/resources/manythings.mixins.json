@@ -4,7 +4,10 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "SnowBlockMixin",
-    "EntityMixin"
+    "EntityMixin",
+    "BlockMixin",
+    "ToolItemMixin",
+    "EnchantmentMixin"
   ],
   "client": [
     "client.EditSignMixin",

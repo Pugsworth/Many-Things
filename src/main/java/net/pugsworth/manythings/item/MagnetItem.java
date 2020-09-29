@@ -38,7 +38,7 @@ public class MagnetItem extends Item {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity playerEntity, Hand hand) {
         // return super.use(world_1, playerEntity_1, hand_1);
-        ManyThingsMod.logger.info("magnet: use");
+        // ManyThingsMod.logger.info("magnet: use");
 
         Vec3d origin = playerEntity.getPos();
 
@@ -55,7 +55,7 @@ public class MagnetItem extends Item {
             unit = unit.normalize().multiply(force);
             entity.addVelocity(unit.x, unit.y, unit.z);
 
-            ManyThingsMod.logger.info("force: {}, lengthSqr: {}, double_3 {}", force, lengthSqr, inverseSqr);
+            // ManyThingsMod.logger.info("force: {}, lengthSqr: {}, double_3 {}", force, lengthSqr, inverseSqr);
         });
 
         return new TypedActionResult<>(ActionResult.PASS, playerEntity.getStackInHand(hand));
@@ -80,20 +80,6 @@ public class MagnetItem extends Item {
     @Override
     public int getEnchantability() {
         return 0;
-    }
-
-    @Override
-    public void inventoryTick(ItemStack itemStack, World world, Entity entity, int slot, boolean isThisSlot) {
-        super.inventoryTick(itemStack, world, entity, slot, isThisSlot);
-
-        if (world.isClient) {
-            return;
-        }
-
-        if (((PlayerEntity)entity).isUsingItem()) {
-            // ManyThingsMod.logger.info("tick while using magnet!");
-        }
-        // ManyThingsMod.logger.info("magnet: tick {} {} {}", itemStack.getItem(), slot, isThisSlot);
     }
 
     private ArrayList<Entity> getNearbyItems(World world, Vec3d pos)
